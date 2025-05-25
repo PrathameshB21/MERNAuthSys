@@ -21,6 +21,11 @@ app.use('/userDetails',UserRouter);
 
 const port=process.env.Port||5000;
 connectDB()
+
+app.get('/',(req,res)=>{
+    res.send("Api working")
+});
+
 app.listen(port,()=>{
     console.log(`--------------🚀 Server running on port ${port}--------------`);
     
