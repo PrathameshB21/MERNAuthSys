@@ -9,15 +9,16 @@ import userRoutes from './routes/userRoutes.js'
 import UserRouter from './routes/userDetailsRoutes.js'
 
 const app = express();
-const allowedOrigin = process.env.origin;
+
 app.use(express.json());
 app.use(cookieParser())
+const allowedOrigin = process.env.Frontend_Url;
 app.use(cors({
-    origin: function (allowedOrigin, callback) {
-        if (!allowedOrigin) {
-            callback(new Error('Blocked by CORS'))
-        } else {
+    origin: function (origin, callback) {
+        if (!origin || allowedOrigin.includes(origin)) {
             callback(null, true)
+        } else {
+            callback(new Error('Blocked by CORS'));
         }
     },   // ✅ Your frontend URL here
     credentials: true                  // ✅ Allow credentials (cookies, headers)
