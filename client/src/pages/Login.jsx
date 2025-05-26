@@ -97,20 +97,20 @@ const Login = () => {
         <p className='text-center text-sm mb-3'>{state === "signUp" ? "Create your account" : "Login to your account"}</p>
 
         <form onSubmit={onSubmitHandler}>
-          {state === 'signUp' && (<div className='mb-4 flex items-center gap-3 w-full px-5 py-2.5 rounded-full bg-[#2C3930] '>
-            <img src={assets.person_icon} alt="" />
-            <input name='name' value={inputData.name} onChange={onChangeHandler} type="text" placeholder='Full Name' required className='bg-transparent outline-none' />
+          {state === 'signUp' && (<div className='mb-4 flex items-center gap-3 w-full px-5 py-2.5 rounded-full bg-[#2C3930] overflow-hidden'>
+            <img src={assets.person_icon} alt="" className='w-5 h-5 flex-shrink-0'/>
+            <input name='name' value={inputData.name} onChange={onChangeHandler} type="text" placeholder='Full Name' required className='bg-transparent outline-none  flex-1 min-w-0' />
 
           </div>)}
 
-          <div className='mb-4 flex items-center gap-3 w-full px-5 py-2.5 rounded-full bg-[#2C3930] '>
-            <img src={assets.mail_icon} alt="" />
-            <input name='email' value={inputData.email} onChange={onChangeHandler} type="email" placeholder='Email Id' required className='bg-transparent outline-none' autoComplete="username" />
+          <div className='mb-4 flex items-center gap-2 w-full px-5 py-2.5 rounded-full bg-[#2C3930] overflow-hidden'>
+            <img src={assets.mail_icon} alt="" className='w-5 h-5 flex-shrink-0' />
+            <input name='email' value={inputData.email} onChange={onChangeHandler} type="email" placeholder='Email Id' required className='bg-transparent outline-none flex-1 min-w-0' autoComplete="username" />
 
           </div>
-          <div className='mb-4 flex items-center gap-3 w-full px-5 py-2.5 rounded-full bg-[#2C3930] '>
-            <img src={assets.lock_icon} alt="" />
-            <input name='password' value={inputData.password} onChange={onChangeHandler} type="password" placeholder='Password' required className='bg-transparent outline-none' 
+          <div className='mb-4 flex items-center gap-3 w-full px-5 py-2.5 rounded-full bg-[#2C3930] overflow-hidden '>
+            <img src={assets.lock_icon} alt="" className='w-5 h-5 flex-shrink-0'/>
+            <input name='password' value={inputData.password} onChange={onChangeHandler} type="password" placeholder='Password' required className='bg-transparent outline-none flex-1 min-w-0' 
              autoComplete={state === 'signUp' ? "new-password" : "current-password"}
             />
 
