@@ -4,8 +4,8 @@ import { toast } from "react-toastify";
 
 export const AppContext = createContext();
 
-// const bakendUrl = import.meta.env.VITE_backend_url;
-const backendUrl = "http://localhost:4000";
+const backendUrl = import.meta.env.VITE_backend_url;
+// const backendUrl = "http://localhost:4000";
 
 
 
