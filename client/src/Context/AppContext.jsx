@@ -8,7 +8,7 @@ const backendUrl = import.meta.env.VITE_backend_url;
 // const backendUrl = "http://localhost:4000";
 
 
-
+axios.defaults.withCredentials=true;
 
 export const AppContextProvider = (props) => {
 
