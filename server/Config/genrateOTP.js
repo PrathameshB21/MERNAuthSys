@@ -7,7 +7,7 @@
 
 //Verification Otp 
 export const GenrateVerificationOtp=async()=>{
-    const Otp = String(Math.floor(100000 + Math.random() * 999999)); //random no for otp
+    const Otp = String(Math.floor(100000 + Math.random() * 900000)); //random no for otp
 
 
     const ExpiresIn = Date.now() + 5 * 60 * 1000; //otpm time for 5 mins;
